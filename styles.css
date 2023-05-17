@@ -1,0 +1,103 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: -2;
+}
+
+h1 {
+    color: white;
+    text-transform: capitalize;
+    font-size: 3rem;
+}
+
+/* overlay */
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: -1;
+
+}
+
+.switch-btn {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.switch-btn span {
+    width: 50%;
+    text-transform: capitalize;
+    text-align: center;
+    color: rgb(0, 170, 255);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.switch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(16, 164, 233);
+    display: block;
+    border-radius: 5px;
+    z-index: 2;
+    transition: 500ms;
+}
+
+.slide .switch {
+    left: 50%
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    z-index: 999;
+    visibility: visible;
+}
+
+.hide-preloader {
+    visibility: hidden;
+    z-index: -999;
+}
